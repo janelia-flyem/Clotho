@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script src="../js/clotho.js"></script>
+    <script src="../vendor/d3.js"></script>
+    <script src="../vendor/jquery.js"></script>
+    <script src="../vendor/underscore.js"></script>
+    <link href="../css/clotho.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <img style="height:80px !important" src="../images/clotho-logo.png">
+    <br>
+    <br>
+    <div id='svgContainer'></div>
+  </body>
+  <script type='text/javascript'>
+  var forceData = {
+    d3NodeData: [
+      'A',
+      'B',
+      'C',
+      'D',
+    ],
+    d3EdgeData: [{
+      source: 'C',
+      target: 'D',
+      weight: '2'
+    }, {
+      source: 'D',
+      target: 'C',
+      weight: '4'
+    }, {
+      source: 'A',
+      target: 'B',
+      weight: '10'
+    }, {
+      source: 'D',
+      target: 'B',
+      weight: '2'
+    }, {
+      source: 'A',
+      target: 'D',
+      weight: '3'
+    }, {
+      source: 'D',
+      target: 'A',
+      weight: '5'
+    }, {
+      source: 'C',
+      target: 'A',
+      weight: '1'
+    }, {
+      source: 'B',
+      target: 'A',
+      weight: '15'
+    }, {
+      source: 'A',
+      target: 'C',
+      weight: '9'
+    }, ]
+  }
+  $(document).ready(function() {
+    var forceExample = new clotho({
+      layout: 'force',
+      graphData: forceData,
+      svgContainerID: 'svgContainer',
+      width: $("#svgContainer").width(),
+      height: 550,
+      nodeRadius: 15
+    });
+    forceExample.init();
+  });
+	</script>
+</html>

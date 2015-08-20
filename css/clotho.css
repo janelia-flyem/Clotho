@@ -1,0 +1,39 @@
+.edgePath > path, .edge > path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+.nodeShape {
+  fill: #fff;
+  stroke: #333;
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+.nodeShape:focus, .edgePath:focus {
+  outline: none;
+}
+.nodeLabel, .edgeLabel {
+  font-weight: 300;
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+#svgBackground {
+  cursor: move;
+}
+#svgContainer {
+  border: thick solid black;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+g.type-locked > rect {
+  stroke: black;
+  stroke-width: 3px;
+}
+g.collapsed > rect {
+  fill: #6699FF;
+}
+g.expanded > rect {
+  fill: #99CCFF;
+}
